@@ -1,0 +1,3 @@
+1. PHP Use Smarty Framework, Database Use Idiorm Framework,install in 2016-scholarship/inc/3rd and 2016-scholarship/inc/3rd/smarty
+2. Database use sqlite,install in 2016-scholarship/data/database
+3. Data management page is admin.php,password:9059401151
