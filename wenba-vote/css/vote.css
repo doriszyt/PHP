@@ -1,0 +1,143 @@
+/*
+=================================
+Name: wenba.ca vote
+Created: shawn@vip.51.ca
+Date: 24/08/2015
+=================================
+ */
+
+body { background-color: #F2F2F2; }
+.mt1 { margin-top: 1em; }
+.mt2 { margin-top: 2em; }
+.mt3 { margin-top: 3em; }
+.mt4 { margin-top: 4em; }
+.mt5 { margin-top: 5em; }
+.mt6 { margin-top: 6em; }
+.topnav { background: #fff; height: 50px; line-height: 50px; overflow: hidden; }
+/* 分享代码 */
+.sharebox { }
+.sharebox h3 { float: left; line-height: 50px; color: #5e5e5e; font-size: 1em; margin: 0; padding: 0; }
+.sharebox ul { margin: 0; padding: 0; margin-left: 4em; }
+.sharebox li { display: inline-block; }
+.sharebox li a { text-decoration: none; }
+.sharebox li a i { font-size: 1.8em; color: #888;
+ -moz-transition: all 0.2s ease 0s; -webkit-transition: all 0.2s ease 0s; transition: all 0.2s ease 0s; }
+.sharebox li a:hover i { color: #4482E2; -moz-transition: all 0.2s ease 0s; -webkit-transition: all 0.2s ease 0s; transition: all 0.2s ease 0s; }
+.mainbanner { background: #3B80E5; }
+.mainbanner img { display: block; width: 100%; }
+
+.searchbox .inpt-box { border: 1px solid #C6C6C6; background: #E0E0E0; position: relative; }
+.searchbox .inpt-box dl { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+.searchbox .inpt-box dt { float: right; display: inline; }
+.searchbox .inpt-box dt button { padding: 1.5em 2em; line-height: 1.428em; border: none; background: none; cursor: pointer; }
+.searchbox .inpt-box dt button i { font-size: 1.428em; line-height: 1.428em; color: #ADADAD; }
+.searchbox .inpt-box dd { float: left; }
+.searchbox .ipttext { display: block; width: 100%; border: none; font-size: 1.428em; color: #555; padding: 1em 0; text-indent: 1.6em; background: none; }
+.searchbox label { font-size: 1.428em; padding: 1em 0; color: #999; position: absolute; left: 1.5em; top: 0; }
+
+.filter-2button a { display: block;  text-align: center; padding: 0.5em 0; color: #fff; font-size: 2.29em; text-decoration: none; }
+.filter-2button .group-p a { background: #4482E2; }
+.filter-2button .group-p a:hover { background: #275fb0; }
+.filter-2button .group-g a { background: #FB535B; }
+.filter-2button .group-g a:hover { background: #d51c24; }
+.filter-2button .group-p,
+.filter-2button .group-g { margin-bottom: 1em; }
+
+.item { margin-bottom: 2em; }
+.item .item-inbox { background: #fff; }
+.item .avatorbox { position: relative; border: 1px solid #ddd; border-bottom: none; }
+.item-group .avatorbox { border-bottom: 1px solid #eee; }
+.item .avatorbox span.number { position: absolute; right: 0; top: 0; background: #4B84DF; padding: 0.3em 1em; color: #fff; }
+.item .avatorbox img { display: block; width: 100%; }
+.item .u-info { border-left: 1px solid #DDDDDD; border-right: 1px solid #DDDDDD; padding: 1em; }
+.item .u-info dt { font-size: 1.6em; }
+.item .u-info p { background: #F1F1F1; padding: 0.5em; border-radius: 0.3em; margin-top: 1em; display: block; overflow: hidden; }
+.item dl, .item p { margin: 0; padding: 0; }
+.item .bottom-vote { padding: 1em; border: 1px solid #DDDDDD; }
+.item .bottom-vote span { display: block; float: none !important; text-align: center; }
+.item .bottom-vote strong { font-size: 1.8em; font-family: arial; color: #4482E2; }
+.item .bottom-vote .votebtn a { background: #4482E2; display: block; color: #fff; padding: 0.5em 1em; text-decoration: none; }
+.item-group .bottom-vote strong { color: #F8535E !important; }
+.item-group .bottom-vote .votebtn a { background: #F8535E !important; }
+/*.item-group .u-info p { max-height: 7.8em !important; }*/
+.item-group .avatorbox span.number { background: #F8535E !important; }
+
+.footerbox { background: #4482E2; padding: 3em 0; color: #fff; text-align: center; margin-top: 3em; }
+
+.headerbanner { background: #4482E2; text-align: right; }
+.headerbanner img { display: block;  width: 100%; }
+.article-detail { margin-top: 0; border: 1px solid #DDDDDD; background: #fff; padding: 2em 1em; font-size: 1.125em; line-height: 1.6em; }
+.article-detail p { text-indent: 2em; }
+.userinfo .item-inbox { padding-top: 1em; }
+
+.alert-layout {display:none;}
+.alert-box { width: 80%; background: #fff; position: fixed; left: 10%; top: 50%; margin: -200px 0 0 0; z-index: 9999; }
+.alert-box .inbox { padding: 2em; text-align: center; }
+.alert-box .inbox strong { font-weight: bold; color: #F8535E; font-size: 1.5em; margin: 0 0.1em; }
+.alert-box .sharebtn { display: block; padding: 1em 0; color: #fff; background: #F8535E; margin-top: 2em; }
+.alert-shardow { width: 100%; height: 100%; position: fixed; left: 0; top: 0; background: rgba(0,0,0,0.5); }
+
+.alert-close { position: absolute;
+    top: -1em;
+    right: -1em;
+    background: #f2f2f2;
+    border: 1px solid #bbb;
+    color: #555;
+    font-family: arial;
+    border-radius: 100%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    overflow: hidden; }
+
+.qrcode-container {display: none}
+.qrcode-container .alert-shardow { background: rgba(0,0,0,0.8); }
+.code-alert { width: 300px; position: fixed; left: 50%; top: 50%; margin: -250px 0 0 -150px; z-index: 999; }
+.code-alert .code-box img { display: block; width: 100%; }
+.code-alert p { width: 100%; display: block; font-size: 1em; color: #fff; line-height: 1.5em; }
+.code-alert p.title { font-size: 1.2em; color: #ffff00; }
+.active {display: block;}
+.code-alert .alert-close { text-align: center; }
+
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  /*.item .u-info p { max-height: 3.8em; }*/
+  .item .bottom-vote span { float: none; }
+  .item .bottom-vote span.pull-left { float: left !important; text-align: left; }
+  .item .bottom-vote span.pull-right { float: right !important; text-align: left; }
+  .userinfo { margin-top: -207px; }
+  .headerbanner img { display: inline; width: auto; }
+  .article-detail { padding: 3em; margin-top: 2em; }
+}
+
+.no-vote-link {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+@media (max-width: 768px) {
+  .topnav { height: 30px; line-height: 30px; display: none; }
+  .topnav .pull-left { text-align: center; }
+  .searchbox .inpt-box { border-radius: 50px; }
+  .searchbox .ipttext { padding: 0.3em 0 !important; }
+  .searchbox .inpt-box dt button { padding: 0.5em 1em; }
+  .searchbox label { padding: 0.8em 0; font-size: 1em; }
+  .mt2 { margin-top: 1em; }
+  .filter-2button .group-p, .filter-2button .group-g { margin-bottom: 0; }
+  .filter-2button a { font-size: 1.2em; border-radius: 50px; }
+  .item .avatorbox span.number { padding: 0.2em 0.5em; font-size: 0.875em; }
+  .item .u-info { padding: 0.5em; }
+  .item .u-info dt { font-size: 1.2em; }
+  .item .u-info dd { font-size: 0.875em; }
+  .item .u-info p { font-size: 0.875em; margin-top: 0.5em; }
+  .item .bottom-vote { padding: 0.5em; }
+  .item .bottom-vote strong { font-size: 1.3em; }
+  .item .bottom-vote .votebtn a { border-radius: 50px; padding: 0.5em; }
+  .footerbox { padding: 1em 0; margin-top: 1em; }
+  .code-alert { width: 70%; position: fixed; left: 15%; top: 50%; margin: -60% 0 0 0; z-index: 999; }
+}
+
+.item-group .u-info dt { font-size: 1em; line-height: 1.2em; }

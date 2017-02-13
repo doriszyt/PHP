@@ -1,0 +1,103 @@
+body { font-family: Microsoft YaHei, Tahoma, Geneva, sans-serif; background: #DADADA; }
+
+.topnav { height: 50px; line-height: 50px; background: #060D27; }
+.topnav .lefttext,
+.topnav .lefttext a { color: #fff; }
+
+.mainbanner { height: 200px; background: url(../images/mainbanner.jpg) center top no-repeat; background-size: cover; border-bottom: 2px solid #061F5C; }
+.mainbanner .bannerbox { height: 200px; background-color: rgba(0, 144, 255, 0.6); background-image: url(../images/main-text-full.png); background-position: center center; background-repeat: no-repeat; background-size: contain; }
+
+
+
+.main-menu { border-top: 10px solid #061F5C; background: #1F3465; color: #fff; }
+.main-menu a { color: #fff; display: block; padding: 1rem 2rem; font-size: 1.5rem; }
+.main-menu ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+.main-menu ul li { display: block; border-bottom: 1px solid #0A205A; }
+
+.block-titlebox { background: #1A60BE; border-bottom: 3px solid #0F4388; color: #fff; font-size: 2rem; padding: 1rem; text-align: center; }
+.maininfoblock { background: #fff; padding-top: 0rem; }
+.maininfoblock .n-box { padding: 2rem; }
+.mt { margin-top: 2rem; }
+.loginbox { border-right: none; padding-right: 15px; text-align: center; }
+.reg-box { padding-left: 15px; text-align: center; }
+.mainformbox ul { list-style: none; padding: 0; margin: 0; }
+.mainformbox li { padding: 0.625rem 0; }
+.mainformbox input, .mainformbox button { width: 100%; padding: 1rem 0; }
+.mainformbox input { text-indent: 2rem; }
+.reg-box h3 { margin-bottom: 3rem; }
+
+.formbox li { padding: 0.625rem 0; }
+.formbox textarea { width: 100%; height: 212px; border-color: #CCCCCC; padding: 1rem; }
+.formbox .block01 { padding-right: 0; }
+.formbox .block02 { padding: 0.625rem 0rem 0.625rem 0rem; }
+.formbox .block03 li span { display: block; border: 1px solid #D1D1D1; background:#EDEDED; position: relative; text-align: center; overflow: hidden; }
+.formbox .block03 li span label { padding: 1rem 0; }
+.formbox .block03 li span input { position: absolute; left:0; top: 0; width: 100%; height: 60px; opacity: 0; cursor: pointer;}
+.formbox .block03 li.rightli { padding-left: 0; }
+.formbox .block03 li.leftli { padding-right: 0; }
+.formbox .block04 { padding-right: 0rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center; }
+.formbox .block04 p { color:#ff0000; margin-top: 1rem; }
+.top1box { margin-top: 2rem; }
+.formbox .titleipt { margin-bottom: 1em; }
+
+.qrbox { display: none; }
+.qrbox .row { position: relative; }
+.qr-codebox { position: fixed; right: 5%; top: 36%; text-align: center; background: #eee; box-shadow: 0 0 6px rgba(0,0,0,0.5);}
+.qr-codebox p { padding: 0.5em 0 0;}
+
+.event-sh .sh-ul { list-style: none; margin: 0; padding: 0; }
+.event-sh .sh-ul div div { background: #f2f2f2; border-radius: 20px; padding: 1.5em; font-size: 1.2em; text-align: center; margin-bottom: 1em; }
+.event-sh .sh-ul div div p { font-weight: bold; font-size: 1.6em; padding-top: 0.5em; }
+
+.pw-box { }
+.pw-box .list-box { text-align: center; }
+.pw-box .list-box img { display: block; width: 100%; border-radius: 100%; border-radius: 100%; box-shadow: 0 0 6px rgba(0,0,0,0.3); }
+
+.select-type-box a { display: block; padding: 1em 0; }
+.footer { text-align: center; background: #fff; padding: 3em 0; margin-top: 3em; }
+
+.wangqi dl { display: block; margin: 0; padding: 0; }
+.wangqi dl dt { font-size: 1.5em; color: #333; border-bottom: 2px solid #f2f2f2; padding-bottom: 1em; padding-top: 1em; margin-bottom: 1em; }
+.wangqi dl dd ul { list-style: none; padding: 0; margin: 0; }
+.wangqi dl dd li { width: 100%; float: left; margin-bottom: 1em; }
+.wangqi dl dd li a { background: #F3F3F3; height: 50px; overflow: hidden; display: block; border-radius: 50px; margin-right: 0em; }
+.wangqi dl dd li .avator-box { float: left; width: 50px; overflow: hidden; height: 50px; border-radius: 50px; }
+.wangqi dl dd li .avator-box img { display: block; width: 50px;}
+.wangqi dl dd li p { display: block; margin-left: 66px; padding-top: 6px; color: #333; }
+
+.jxjj-block .s-item { margin-bottom: 1em; }
+.jxjj-block .s-item span { display: block; background: #F2F2F2; text-align: center; padding: 1em; font-size: 1.5em; border-radius: 20px; }
+
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  .mainbanner { height: 439px; border-bottom: 10px solid #061F5C; }
+  .mainbanner .bannerbox { height: 439px; }
+  .main-menu ul li { display: inline-block; }
+  .main-menu a { padding: 2rem 3rem; font-size: 2rem; border-bottom: none;  }
+  .block-titlebox { text-align: left; padding: 1rem 8rem; font-size: 3rem; }
+  .maininfoblock .n-box { padding: 8rem; }
+  .maininfoblock { padding-top: 3rem; }
+  .mt { margin-top: 4rem; }
+  .loginbox { border-right: 1px solid #eee; padding-right: 8rem; text-align: left; }
+  .reg-box { padding-left: 8rem; }
+  .formbox .block03 li.rightli { padding-left: 3rem; }
+  .formbox .block03 li.leftli { padding-right: 3rem; }
+  .formbox .block01 { padding-right: 3rem; }
+  .formbox .block02 { padding-left: 3rem; }
+  .formbox .block04 { padding-right: 3rem; text-align: left;  }
+  .top1box { margin-top: 0; }
+  .wangqi dl dd li { width: 50%; }
+  .wangqi dl dd li a { margin-right: 2em; }
+  .qrbox { display: block; }
+ }
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+
+ }
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+
+ }
