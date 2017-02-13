@@ -9,7 +9,7 @@ define('APP_ROOT', dirname(__FILE__));
 
 require_once(APP_ROOT . '/inc/init.php');
 
-$type         = isset($_POST['type']) ? intval($_POST['type']) : 1; //可选值：1（个人），2（社团）
+$type         = isset($_POST['type']) ? intval($_POST['type']) : 1; //option,1-individual,2-group
 $form_hash    = isset($_POST['form_hash']) ? trim($_POST['form_hash']) : '';
 $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php';
 $found_error  = 0;
@@ -17,7 +17,7 @@ $error_msg    = '';
 
 if (! isset($_SESSION['logged'])) {
     $data = array(
-        'message' => '请先登录后再进行操作',
+        'message' => 'Please Login first',
         'link'    => $http_referer
     );
 
@@ -45,56 +45,56 @@ else {
 }
 
 //==================================================================================================
-// 个人附件上传
+// upload file
 //==================================================================================================
 if (1 == $type) {
     $upload_dir = './upload';
     $size_limit = 5;
     $ext_limit  = array('jpg', 'png', 'pdf', 'doc', 'docx');
 
-    //成绩单
+    //transcript
     $result_upload_transcript = upload($upload_dir, 'file_transcript', $size_limit, $ext_limit);
 
     if (! $result_upload_transcript['status']) {
         $data = array(
-            'message' => '文件传输超时或您的文件大小过大,请确保您的单个文件小于2M并保证网络通畅',
+            'message' => 'file size over 2M, please decrease the size',
             /*'link'    => $http_referer*/
         );
 
         display_and_halt($data);
     }
 
-    //学签
+    //Study permit
     $result_upload_visa = upload($upload_dir, 'file_visa', $size_limit, $ext_limit);
 
     if (! $result_upload_visa['status']) {
         $data = array(
-            'message' => '学签上传失败：' . $result_upload_visa['message'],
+            'message' => 'Study permit upload failed:' . $result_upload_visa['message'],
             /*'link'    => $http_referer*/
         );
 
         display_and_halt($data);
     }
 
-    //个人简历
+    //Resume
     $result_upload_resume = upload($upload_dir, 'file_resume', $size_limit, $ext_limit);
 
     if (! $result_upload_resume['status']) {
         $data = array(
-            'message' => '个人简历上传失败：' . $result_upload_resume['message'],
+            'message' => 'Resume upload failed：' . $result_upload_resume['message'],
             /*'link'    => $http_referer*/
         );
 
         display_and_halt($data);
     }
 
-    //其他资料
+    //Others
     if (isset($_FILES['file_others']['name'])) {
         $result_upload_others = upload($upload_dir, 'file_others', $size_limit, $ext_limit);
 
         /*if (! $result_upload_others['status']) {
             $data = array(
-                'message' => '其他资料上传失败：' . $result_upload_others['message'],
+                'message' => 'Other files upload failed：' . $result_upload_others['message'],
                 'link'    => $http_referer
             );
 
@@ -126,13 +126,13 @@ if (1 == $type) {
 }
 
 //==================================================================================================
-// 表单校验
+// Validate Form
 //==================================================================================================
 if (1 == $type) {
     $_str =preg_replace("/\s|　/","",$content);
     if (mb_strlen($_str) < 500) {
         $found_error = 1;
-        $error_msg   = "留学生活感受不能少于500个字符";
+        $error_msg   = "content must over 500 words ";
     }
     $field_names = array(
         'name'    => array('姓名', 20),
@@ -179,14 +179,14 @@ if ($found_error) {
     display_and_halt($data);
 }
 //==================================================================================================
-// 个人附件上传
+// Attachment upload
 //==================================================================================================
 if (1 == $type) {
     $upload_dir = './upload';
     $size_limit = 5;
     $ext_limit  = array('jpg', 'png', 'pdf', 'doc', 'docx');
 
-    //成绩单
+    //transcript
     $result_upload_transcript = upload($upload_dir, 'file_transcript', $size_limit, $ext_limit);
 
     if (! $result_upload_transcript['status']) {
@@ -198,7 +198,7 @@ if (1 == $type) {
         display_and_halt($data);
     }
 
-    //学签
+    //study permit
     $result_upload_visa = upload($upload_dir, 'file_visa', $size_limit, $ext_limit);
 
     if (! $result_upload_visa['status']) {
@@ -210,7 +210,7 @@ if (1 == $type) {
         display_and_halt($data);
     }
 
-    //个人简历
+    //Resume
     $result_upload_resume = upload($upload_dir, 'file_resume', $size_limit, $ext_limit);
 
     if (! $result_upload_resume['status']) {
@@ -222,7 +222,7 @@ if (1 == $type) {
         display_and_halt($data);
     }
 
-    //其他资料
+    //Others
     if (isset($_FILES['file_others']['name'])) {
         $result_upload_others = upload($upload_dir, 'file_others', $size_limit, $ext_limit);
 
@@ -238,7 +238,7 @@ if (1 == $type) {
         $others_file_name = $result_upload_resume['data'];
     }
 
-    //个人照片
+    //Photo
     $result_upload_photo = upload($upload_dir, 'file_photo', $size_limit, $ext_limit);
 
     if (! $result_upload_photo['status']) {
@@ -259,14 +259,14 @@ if (1 == $type) {
     $photo_file_name     = $result_upload_photo['data'];
 }
 //==================================================================================================
-// 团体附件上传
+// Group file upload
 //==================================================================================================
 else {
     $upload_dir = './upload';
     $size_limit = 10;
     $ext_limit  = array('jpg', 'png', 'pdf', 'doc', 'docx');
 
-    //社团简介
+    //group introduction
     $result_upload_introduction = upload($upload_dir, 'file_introduction', $size_limit, $ext_limit);
 
     if (! $result_upload_introduction['status']) {
@@ -278,7 +278,7 @@ else {
         display_and_halt($data);
     }
 
-    //社团主要成就
+    //group achievement
     $result_upload_achievement = upload($upload_dir, 'file_achievement', $size_limit, $ext_limit);
 
     if (! $result_upload_achievement['status']) {
@@ -298,14 +298,14 @@ else {
 
 
 //==================================================================================================
-// 提交表单
+// form submit
 //==================================================================================================
 
 //保存个人信息
 $new_signup = ORM::for_table('signup')->create();
 
 if (1 == $type) {
-    //报名类型：个人
+    //type_individual
     $new_signup->type        = 1;
     $new_signup->uc_uid      = isset($_SESSION['uid']) ? $_SESSION['uid'] : 0;
     $new_signup->uc_nickname = isset($_SESSION['nickname']) ? $_SESSION['nickname'] : '';
@@ -331,7 +331,7 @@ if (1 == $type) {
         display_and_halt($data);
     }
 
-    //保存附件
+    //save file
     $arr_files_vars = array('transcript_file_name', 'visa_file_name', 'resume_file_name', 'others_file_name', 'photo_file_name');
 
     foreach ($arr_files_vars as $v) {
@@ -359,7 +359,7 @@ if (1 == $type) {
         }
     }
 } else {
-    //报名类型：社团
+    //type_group
     $new_signup->type        = 2;
     $new_signup->uc_uid      = isset($_SESSION['uid']) ? $_SESSION['uid'] : 0;
     $new_signup->uc_nickname = isset($_SESSION['nickname']) ? $_SESSION['nickname'] : '';
@@ -385,7 +385,7 @@ if (1 == $type) {
         display_and_halt($data);
     }
 
-    //保存附件
+    //save_files
     $arr_files_vars = array('introduction_file_name', 'achievement_file_name');
 
     foreach ($arr_files_vars as $v) {
@@ -414,7 +414,7 @@ if (1 == $type) {
     }
 }
 
-//提交感悟到问吧
+//post article to wenba.ca
 
 $api_url   =  $_config['api_base_url'] .'wenbapublish/post_article';
 
@@ -431,7 +431,7 @@ $arr_curl_result = json_decode($curl_result, true);
 
 
 //==================================================================================================
-// 防止频繁提交提交
+// prevent submit frequently
 //==================================================================================================
 if (isset($_SESSION['last_timestamp']) AND $_SESSION['last_timestamp']) {
     //如果两次提交时间小于指定的秒数
@@ -445,11 +445,11 @@ if (isset($_SESSION['last_timestamp']) AND $_SESSION['last_timestamp']) {
     }
 }
 
-//提交成功，保存提交的时间戳，防止频繁刷新
+
 $_SESSION['last_timestamp'] = time();
 
 
-//给出提示信息
+//return result
 if (1 == $type){
 $data = array(
     'message' => "报名成功,点击确定返回问吧查看并编辑您的文章",
