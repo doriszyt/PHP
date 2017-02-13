@@ -4,7 +4,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>奖学金2015 - 主页</title>
+	<title>奖学金2016 - 主页</title>
 </head>
 
 <body>
