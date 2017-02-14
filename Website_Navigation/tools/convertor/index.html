@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>51.CA 繁简转换器</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+<style type="text/css">
+@import url("css/convertor.css?20160202");
+</style>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.cookie.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/convertor.js?20160202" charset="utf-8"></script>
+</head>
+
+<body>
+<div class="header">
+<h1>51.CA 繁简转换器</h1>
+<ul class="menu" id="menu">
+	<li id="text_type" class="selected" data-type="text">文本转码</li>
+	<li id="html_type" data-type="html">HTML 转码</li>
+</ul>
+</div>
+<div class="wrap">
+<form method="post" name="convertor" id="convertor" action="" onsubmit="return false;">  
+<div id="convertorBox">
+	<div class="left">
+		<textarea name="input" id="input" class="input" placeholder="请黏贴要转换的文字至此"></textarea>
+	</div>
+	<div class="buttons">
+		<input type="button" data-tolang="zh-cn" class="cvtbtn" value="大陆简体 &rsaquo;" />
+		<input type="button" data-tolang="zh-tw" class="cvtbtn" value="台湾繁体 &rsaquo;" />
+		<input type="button" data-tolang="zh-hk" class="cvtbtn" value="香港繁体 &rsaquo;" />
+		<div style="margin: 10px 0; text-align: center">
+			<a href="javascript: void(0);" id="select-output">全选输出</a>
+		</div>
+	</div>
+	<div class="right">
+		<div id="output" class="output"></div>
+	</div>
+</div>
+</form>
+</div>
+
+ </body>
+</html>

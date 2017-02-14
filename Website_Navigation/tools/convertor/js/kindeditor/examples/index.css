@@ -1,0 +1,20 @@
+.ke-content {
+	font-size: 14px;
+	background-color: #ffffff;
+	line-height: 1.7
+}
+.ke-content table {
+	border-collapse:collapse;
+}
+.red {
+	color: white;
+	background-color: red;
+}
+.green {
+	color: white;
+	background-color: green;
+}
+.yellow {
+	color: white;
+	background-color: yellow;
+}

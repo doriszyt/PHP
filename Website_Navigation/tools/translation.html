@@ -1,0 +1,55 @@
+ <title>在线翻译 - 无忧资讯</title>
+
+<div class="PopupBody PopupTabArea">
+  <h2>Google 在线翻译</h2>
+    <div class="trans-wrap">
+                <div><textarea name="transcontent" id="transcontent" cols="70" rows="4"></textarea></div>
+                <div class="trans-select">
+                    <select name="trans" id="trans-options">
+                        <option value="1">转换为英文</option>
+                        <option value="2">转换为中文</option>
+                    </select>
+                    <a id='js-trans-hidden-link' target='_blank' href='' style='display:none;'>
+                        <span id='js-trans-hidden-text'>hidden link</span>
+                    </a>
+                    <input type="submit" value="翻译" name="transsub" id="transsub" class="fysub">
+                </div>
+       </div>
+    <script>
+        $(function() {//页面加载完成后才绑定的事件
+            $('#transsub').click(function() {//在点击 id“js-search-btn”后执行方法
+                var engine_list_trans = {
+                    1: 'https://translate.google.ca/#auto/en/',
+                    2: 'https://translate.google.ca/#auto/zh-CN/',
+                };
+
+                var selected_engine_code_trans = $('#trans-options').find('option:selected').val();
+                var keyword = $('#transcontent').val();
+
+                if ('' === keyword) {
+                    return;
+                }
+                var engine_url_trans = engine_list_trans[selected_engine_code_trans];
+
+                if (undefined === engine_url_trans) {
+                    return;
+                }
+                var jump_to_this_url_trans = engine_url_trans + encodeURI(keyword);
+                $('#js-trans-hidden-link').attr('href', jump_to_this_url_trans);
+                $('#js-trans-hidden-text').trigger('click');
+            });
+        });
+
+    </script>
+
+
+
+<h2>其他在线翻译</h2>
+<ul class="list">
+    <!--<li><a href="http://www.google.cn/language_tools" target="_blank">Google在线翻译</a></li>-->
+    <li><a href="http://www.netat.net/" target="_blank">金桥翻译</a></li>
+    <li><a href="http://www.worldlingo.com/wl/Translate" target="_blank">worldlingo在线翻译</a></li>
+    <!--<li><a href="jianfanzh.html">在线繁体字转换</a></li>-->
+</ul>
+
+</div>
